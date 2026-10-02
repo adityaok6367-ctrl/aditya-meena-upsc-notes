@@ -107,4 +107,9 @@ app.delete("/api/notes/:id",admin,(req,res)=>{
  db.prepare("DELETE FROM notes WHERE id=?").run(req.params.id);res.json({ok:true});
 });
 app.use((err,req,res,next)=>res.status(400).json({error:err.message||"Request failed"}));
+app.use(express.static(path.join(__dirname, "public")));
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
 app.listen(PORT,()=>console.log(`Aditya Meena Notes running on http://localhost:${PORT}`));
