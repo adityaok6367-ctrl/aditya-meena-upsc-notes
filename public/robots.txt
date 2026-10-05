@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aditya-meena-upsc-notes.onrender.com/sitemap.xml
